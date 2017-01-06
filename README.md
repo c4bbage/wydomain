@@ -9,7 +9,10 @@ chaxun.la 对请求频率过高的ip，要人工输入验证码，代码嵌入�
    
 https://github.com/ring04h/wydomain/blob/wydomain2/captcha.py   
 https://github.com/ring04h/wydomain/blob/wydomain2/utils/chaxunla.py#L41   
-   
+
+passivetotal API 查询需要自行申请账号并设置key.如果频率过高可以多申请几个做个while就好。
+路径: utils/passivetotal.py
+
 ### 库依赖安装
 ```
 $ pip install -r requirements.txt	
