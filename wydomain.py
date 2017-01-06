@@ -98,6 +98,11 @@ def run(args):
     save_result(_cache_file, result.get('dns_names'))
     logging.info("google TransparencyReport fetcher subdomains({0}) successfully...".format(len(result.get('dns_names'))))
 
+    logging.info("starting passivetotal fetcher...")
+    result = PassiveTotal(domain=domain).run()
+    _cache_file = os.path.join(_cache_path, 'passivetotal_dnsnames.json')
+    save_result(_cache_file, result)
+    logging.info("passivetotal fetcher subdomains({0}) successfully...".format(len(result)))
     # Collection API Subdomains
     sub_files = [
         'alexa.json', 
@@ -106,7 +111,8 @@ def run(args):
         'netcraft.json', 
         'sitedossier.json',
         'threatcrowd.json',
-        'threatminer.json']
+        'threatminer.json',
+        'passivetotal_dnsnames.json']
 
     # process all cache files
     subdomains = []
